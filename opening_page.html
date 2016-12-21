@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        sessionStorage.clear();
+        sessionStorage.setItem('userColor', 'yellow');
+        sessionStorage.setItem('score', 0);
+        sessionStorage.setItem('level', 1);
+    </script>
+</head>
+
+<body style='text-align: center'>
+  <h1 style="bold">Dr.Drew's City Escape</h1>
+    <div id="colorSelector">
+        <label for="tags_yellow">Select Dr.Drew's Color:<br> Yellow</label><input type="radio" name="picker" id="yellow_picker" value="yellow" onclick="colorSet(this.value)" checked/>
+        <label for="tags_blue"> Blue</label><input type="radio" name="picker" id="blue_picker" value="blue" onclick="colorSet(this.value)" />
+        <label for="tags_green"> Green</label><input type="radio" name="picker" id="green_picker" value="green" onclick="colorSet(this.value)" />
+    </div>
+    <button onclick="window.location.href='pencil_game.html'">Enter Game</button>
+    <br>
+    <br>
+    <img src="images/pencil_yellow.png" alt="yellow Drew" height="200" width="65">
+    <img src="images/pencil_blue.png" alt="blue Drew" height="200" width="65">
+    <img src="images/pencil_green.png" alt="blue Drew" height="200" width="65">
+    <br><button onclick="window.location.href='score_page.php'">View Leaderboard</button>
+
+
+    <p>
+      You are Dr.Drew, a criminal mastermind you must use his drawing abilities to escape the forces of justice.<br>
+      <strong>Gameplay and Controls: </strong>
+      <ul>
+        <li>Use the <strong>side arrow keys</strong> to move side to side</li>
+        <li><strong>Up arrow key</strong> to jump</li>
+        <li><strong>Space bar</strong> to draw bridges into the environment <br> <img src="images/platform.jpg" alt="Bridge"></li>
+        <li>Don't fall off the stage - you'll die</li>
+        <li>Also, don't let Police Cheif Rhombus touch you - you'll die <br><img src="images/blackbox.jpg" alt="Rhombus" height="100" width="100"></li>
+        <li>Reach the end token at the end of each stage as fast as you can. <br><img src="images/winToken.jpg" alt="Rhombus" height="100" width="100"></li>
+        <li>And lastly, don't go over your shape limit every level, or you'll be unable to draw your way out of trouble!</li>
+      </ul>
+
+
+    </p>
+
+
+    <script type="text/javascript">
+        function colorSet(colorValue) {
+            console.log(colorValue);
+            sessionStorage.setItem('userColor', colorValue);
+            console.log(sessionStorage.getItem('userColor'));
+        }
+        //console.log(color);
+        //sessionStorage.setItem('userColor', 'value')
+    </script>
+</body>
+
+</html>
+
+
+<!-- Link to useful tutorial:
+http://indiegamr.com/retro-style-plattform-runner-game-for-mobile-with-easeljs-part-1/ -->
